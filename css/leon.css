@@ -1,0 +1,300 @@
+:root{
+    --main-color: #10CAB7;
+    --secondary-color: #2c4755;
+}
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Work Sans', sans-serif;
+}
+.container{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.special-heading
+{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p{
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px) { 
+    .special-heading
+    {
+        font-size: 60px;
+    }
+    .special-heading + p{
+        margin-top: -20px;
+    }
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px) 
+   No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) 
+@media (min-width: 576px) { 
+    .container{
+        width: ;
+    }
+
+ }*/
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .container{
+        width: 750px;
+    }
+
+ }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+    
+ }
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .container{
+        width: 1170px;
+    }
+    
+ }
+/* XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { 
+    .container{
+        width: ;
+    }
+    
+ } */
+ nav .container{
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    position: relative;
+}
+nav .container .logo
+{
+    width: 80px;
+}
+nav .container .icon .menu-icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+} 
+
+.links{
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+    Top:100%;
+    display: none; 
+    background-color: var(--main-color);
+    margin: 0;
+    padding: 0;
+    width: 120px;
+}
+.links li{
+    padding: 5px 0;
+}
+.links li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    transition: 0.4s;
+}
+
+.links li a:hover {
+    padding-left: 30px;
+}
+
+.links li:not(:last-child) a{
+    border-bottom: 1px solid #ddd ;
+}
+
+.icon:hover .links{
+    display: block;
+    z-index: 1;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  .bar2
+  {
+    width: 20px;
+  }
+
+  .menu-icon:hover .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+    transform: rotate(-45deg) translate(-8px, 6px);
+  }
+  
+  .menu-icon:hover .bar2 {
+      opacity: 0;
+    }
+  
+  .menu-icon:hover .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+/* landing part */
+header{
+    background-image: url(../Images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 32px);
+    position: relative;
+}
+
+header .intro-text{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+    max-width: 100%;
+}
+
+header .intro-text h1{
+    margin: 0;
+    color: var(--main-color);  
+}
+ 
+  .features .container{
+      display: grid;
+      /* grid-template-columns:repeat(3,1fr); */
+      grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+      grid-gap:20px;
+      background-color: #f6f6f6; 
+      padding-top: 50px;
+  }
+  .features .container .feat{
+      text-align: center;
+  }
+  .features .container .feat h2{
+      font-weight: 800;
+      margin: 30px 0;
+  }
+  .features .container .feat p{
+      color: #777;
+      font-size: 17px;
+  }
+
+  i{
+    color: var(--main-color);
+  }
+
+  #Services
+  {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #Services .services-content
+  {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+      grid-gap:30px;
+      margin-top: 100px;
+  } 
+
+  #Services .services-content .service
+  {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      margin-bottom: 40px;
+     
+  }
+  @media (max-width: 767px) {
+    #Services .services-content .service
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+  .service p {
+    grid-area: 2/2/3/3;
+}
+
+#Services .services-content .service h2
+{
+    margin: 0;
+}
+#Services .services-content .service p
+{
+    color: #777444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+#Services .services-content .image
+{
+    position: relative;   
+}
+
+
+  #Services .services-content .image::after{
+      content: "";
+    width: 80px;
+    height: calc(100% + 100px);
+    background-color: var(--secondary-color);
+    position: absolute;
+    top:-50px;
+    right: 60px;
+    z-index: -1;
+  
+  }
+
+  
+#Services .services-content .image img{
+    width: 260px;
+}
+@media (max-width:1199px)
+{
+    #Services .services-content .image{
+        display:none;
+    }
+
+}
+/* 
+  .service p {
+      grid-area: 2/2/3/3;
+  }
+
+  #Services .container .back
+  {
+      
+    grid-column: 3/4;
+    grid-row: 1/span 2;
+      
+  }
+
+  #Services .container img{
+    
+  } */
